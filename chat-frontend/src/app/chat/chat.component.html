@@ -1,0 +1,15 @@
+    <div *ngIf="chat" class="px-10">
+      <div class="chat chat-end" *ngFor="let m of chat.messages">
+        <div class="chat-header">
+          {{ m.sender }}
+          <time class="text-xs opacity-50">{{ m.date | date }}</time>
+        </div>
+        <div class="chat-bubble chat-bubble-primary">{{ m.content }}</div>
+      </div>
+    </div>    
+    <input
+    class="input m-10 w-5/6"
+    type="text"
+    (keyup.enter)="onEnter($event)"
+    placeholder="Type your message..."
+  >

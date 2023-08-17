@@ -1,0 +1,10 @@
+<div class="collapse collapse-arrow bg-base-200" *ngFor="let c of chats">
+    <input type="radio" name="my-accordion-2" checked="checked" /> 
+    <div class="collapse-title text-xl font-medium">
+      {{c.name}} - {{c.date | date}}
+    </div>
+    <div class="collapse-content"> 
+      <p>{{c.description}}</p>
+      <button class="btn btn-neutral mt-4" [routerLink]="'/chats/' + c.id">Open Chat</button>
+    </div>
+</div>
